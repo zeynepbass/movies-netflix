@@ -97,7 +97,7 @@ const Kullanici = () => {
 
 
                     </div>
-                    <button type="submit" className="btn btn-danger d-block mx-auto col-3"  >Düzenle</button>
+                    <button type="submit" className="btn btn-danger d-block mx-auto col-3" style={{background:"red"}} >Düzenle</button>
                 </form >
             </div >
         </>

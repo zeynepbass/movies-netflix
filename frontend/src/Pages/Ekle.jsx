@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FileBase from 'react-file-base64';
 import { fetchMemory } from '../api';
+import "./style.css";
 const Ekle = () => {
   const Navigate = useNavigate();
   const [post, SetPost] = useState({
@@ -33,7 +34,7 @@ const Ekle = () => {
   return (
     <>
       <div className="container mt-5">
-        <form style={{ backgroundColor: 'white', padding: '20px', borderRadius: '20px', color: 'black' }} onSubmit={onSubmit}>
+        <form style={{ backgroundColor: 'white', padding: '20px', borderRadius: '20px', color: 'black',maxWidth:"100%" }} onSubmit={onSubmit}>
           <h4 className='text-center'>Film Ekle</h4>
           <div className='row'>
             <div className='col-md-6'>      <div className="form-group">
@@ -78,7 +79,7 @@ const Ekle = () => {
               <textarea rows="4" className='form-control' cols="50" name="aciklaiki" onChange={onInputChange} style={{ height: "auto" }}> </textarea>
 
             </div></div>
-            <div className='col-md-6'>             <div className="form-group p-3" style={{ border: "1px solid red", borderRadius: "10px" }}>
+            <div className='col-md-3'>             <div className="form-group p-3" style={{ border: "1px solid red", borderRadius: "10px" }}>
               <label htmlFor="exampleInputPassword1">Resim:</label><br></br>
 
               <FileBase
@@ -97,7 +98,7 @@ const Ekle = () => {
 
 
           </div>
-          <button type="submit" className="btn btn-danger d-block mx-auto col-3">Ekle</button>
+          <button type="submit" className="btn btn-danger d-block mx-auto col-3" style={{background:"red"}}>Ekle</button>
         </form>
 
 

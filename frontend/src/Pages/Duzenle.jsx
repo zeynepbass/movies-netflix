@@ -45,7 +45,7 @@ const Duzenle = () => {
   return (
     <>
       <div className="container mt-5">
-        <form style={{ backgroundColor: 'white', padding: '20px', borderRadius: '20px', color: 'black' }} onSubmit={Duzenle}>
+        <form style={{ backgroundColor: 'white', padding: '20px', borderRadius: '20px', color: 'black',maxWidth:"100%" }} onSubmit={Duzenle}>
           <h4 className='text-center'>Film Düzenle</h4>
           <div className='row'>
             <div className='col-md-6'>      <div className="form-group">
@@ -104,7 +104,7 @@ const Duzenle = () => {
 
 
               </div></div>
-            <div className='col-md-6'>
+            <div className='col-md-3'>
               <div className="form-group p-3" style={{ border: "1px solid red", borderRadius: "10px" }}>
                 <label htmlFor="exampleInputPassword1">Resim:</label><br></br>
                 <img src={data.selectedFile} alt="" width="100" height="100" className='mb-1' style={{ borderRadius: "10px" }}></img><br></br>
@@ -124,7 +124,7 @@ const Duzenle = () => {
 
 
           </div>
-          <button type="submit" className="btn btn-danger d-block mx-auto col-3"  >Düzenle</button>
+          <button type="submit" className="btn btn-danger d-block mx-auto col-3" style={{background:"red"}} >Düzenle</button>
         </form>
       </div>
     </>

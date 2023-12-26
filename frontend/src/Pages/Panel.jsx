@@ -62,7 +62,7 @@ const Panel = (props) => {
             <nav>
               <form action="#">
                 <div className="form-input">
-                  <input type="search" placeholder="search..." />
+                  <input type="search" placeholder="arama..." />
                   <button className="search-btn mb-4">
                     <i className="fas fa-search search-icon "></i>
                   </button>

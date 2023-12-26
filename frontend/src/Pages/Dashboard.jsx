@@ -83,15 +83,15 @@ const Dashboard = () => {
           <div className="head">
             <h3>Filmler</h3>
             <form action="#">
-              <div className="search-box">
-                <input type="text" className="input-search p-1" placeholder=" Search..." value={search}
+              <div className="search-box d-flex">
+                <input type="text" className="input-search p-1" placeholder=" Arama..." value={search}
                   aria-label="Search"
 
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}
                   style={{ outline: "none", border: "none", borderTopLeftRadius: "10px", borderBottomLeftRadius: "10px", background: "var(--grey)", height: "40px" }} />
-                <button className="btn-search p-0 " style={{
+                <button className="btn-search p-0 m-0" style={{
                   border: "none",
                   width: "40px",
                   height: "40px"
