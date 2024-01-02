@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FileBase from 'react-file-base64';
-import { fetchMemory } from '../api';
+import { fetchPost } from '../api';
 import "./style.css";
 const Ekle = () => {
   const Navigate = useNavigate();
@@ -25,7 +25,7 @@ const Ekle = () => {
   const onSubmit = async (e) => {
 
     e.preventDefault();
-    fetchMemory()
+    fetchPost(post)
     Navigate("/panel")
 
 
