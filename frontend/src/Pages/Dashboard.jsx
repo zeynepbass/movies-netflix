@@ -145,8 +145,8 @@ const Dashboard = () => {
                             {veri.yeni} </td>
                           <td>{veri.renk}</td>
                           <td>{veri.top10}</td>
-                          <td>{veri.film.slice(0, 8)}</td>
-                          <td>{veri.carousel.slice(0, 4) + "..."}</td>
+                          <td>{veri.film}</td>
+                          <td>{veri.carousel}</td>
                           <td>{veri.baslik}</td>
                           <td>{veri.ufakbaslik.slice(0, 4) + "..."}</td>
                           <td>{veri.acikla.slice(0, 4) + "..."}</td>

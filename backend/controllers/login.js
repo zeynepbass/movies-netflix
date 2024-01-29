@@ -51,30 +51,36 @@ const signin=async (req,res)=>{
     }
 }
 const duzenle = async (req, res) => {
-    const { email } = req.params; // Assuming email is in the params
-    const updatedFields = req.body;
+  const { email } = req.params; // Assuming email is in the params
+  const updatedFields = req.body;
 
-    try {
-        // Find the user by email
-        const user = await User.findOne({ email });
+  try {
+      // Find the user by email
+      const user = await User.findOne({ email });
 
-        // Check if the user exists
-        if (!user) {
-            return res.status(404).send("User not found");
-        }
+      // Check if the user exists
+      if (!user) {
+          return res.status(404).send("User not found");
+      }
 
-        // Update only the specified fields
-        Object.assign(user, updatedFields);
+      // Update only the specified fields
+      Object.assign(user, updatedFields);
 
-        // Save the updated user
-        const updatedUser = await user.save();
+      // Hash the password if it's provided in the request
+      if (req.body.password) {
+          const hashedPassword = await bcrypt.hash(req.body.password, 12);
+          user.password = hashedPassword;
+      }
 
-        res.status(200).json(updatedUser);
-    } catch (error) {
-        // Handle the error appropriately
-        console.error(error);
-        res.status(500).send("Internal Server Error");
-    }
+      // Save the updated user
+      const updatedUser = await user.save();
+
+      res.status(200).json(updatedUser);
+  } catch (error) {
+      // Handle the error appropriately
+      console.error(error);
+      res.status(500).send("Internal Server Error");
+  }
 };
 
 const users=async (req,res)=>{

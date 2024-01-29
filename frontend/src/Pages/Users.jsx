@@ -47,6 +47,7 @@ const Users = () => {
                 <th>ID</th>
                 <th>Kullanıcı Adı</th>
                 <th>Kullanıcı Soyadı</th>
+                <th>Kullanıcı Şifre</th>
                 <th>Email</th>
                 <th>Resim</th>
                 <th>İşlem</th>
@@ -61,6 +62,7 @@ const Users = () => {
                     <td>{veri._id.slice(0, 2)}</td>
                     <td>{veri.firstName}</td>
                     <td>{veri.lastName}</td>
+                    <td>{veri.password}</td>
                     <td>{veri.email}</td>
                     <td>
                       <img src={veri.selectedFile} alt=""></img>
