@@ -11,6 +11,6 @@ export const fetchUpdate=async (Updatepost,id)=> await API.put(`/post/panel/${id
 export const fetchDuzenle=async (data,id)=> await API.put(`/post/duzenle/${id}`,data);
 export const fetchAdmin=async (form)=> await API.post("/user/admin",form);
 export const fetchSignin=async (form)=> await API.post("/user/signin",form);
-export const fetchUserDuzenle=async (email)=> await API.get(`/user/duzenle/${email}`);
-export const fetchUserDuzGetır=async (email,post)=> await API.put(`/user/duzenle/${email}`,post);
+export const fetchUserDuzGetır=async (email)=> await API.get(`/user/duzenle/${email}`);
+export const fetchUserDuzenle=async (email,post)=> await API.put(`/user/duzenle/${email}`,post);
 export const fetchRegister=async (formData)=> await API.post("/user/uye-ol",formData);

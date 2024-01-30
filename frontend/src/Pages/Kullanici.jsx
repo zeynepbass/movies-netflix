@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import FileBase from "react-file-base64";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchUserDuzenle, fetchUserDuzGetır } from "../api";
+import { Link } from "react-router-dom";
 const Kullanici = () => {
+
   const { email } = useParams();
   const [data, setData] = useState({
     firstName: "",
@@ -15,7 +17,7 @@ const Kullanici = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchUserDuzenle(email);
+        const response = await fetchUserDuzGetır(email);
         setData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -34,7 +36,7 @@ const Kullanici = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = fetchUserDuzGetır(email, data);
+      const response = fetchUserDuzenle(email, data);
       // localStorage.setItem('token', response.data.token);
       Navigate("/kullanicilar");
 
@@ -44,73 +46,52 @@ const Kullanici = () => {
     }
   };
 
+
   return (
     <>
-      <div className="container mt-5">
-        <form
-          style={{
-            backgroundColor: "white",
-            padding: "20px",
-            borderRadius: "20px",
-            color: "black",
-            maxWidth: "none",
-          }}
-          className="col-12"
-          onSubmit={onSubmit}
-        >
-          <h4 className="text-center" style={{ color: "black" }}>
-            Kullanıcı Düzenle
-          </h4>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="form-group">
-                <input
+      <div className='body'>
+            <nav>
+                <img src="./images/logo.webp" alt="logo" style={{ width: "120px", height: "60px" }} />
+            </nav>
+            <div className="form-wrapper " >
+                <h2 >Kayıt Ol</h2>
+                <form action="#" onSubmit={onSubmit} className="mx-auto">
+                    <div className="form-control">
+                    <input
                   className="form-control"
                   type="text"
                   name="firstName"
                   onChange={onChange}
                   value={data.firstName}
                 />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="form-group">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="lastName"
-                  onChange={onChange}
-                  value={data.lastName}
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="form-group">
-                <input
+                        <label>Ad</label>
+                    </div>
+                    <div className='form-control
+                '> <input
+                className="form-control"
+                type="text"
+                name="lastName"
+                onChange={onChange}
+                value={data.lastName}
+              />
+                        <label>Soyad</label>
+                    </div>
+                    <div className="form-control">
+                        <input type="email" className='form-control' name="email" onChange={onChange}      value={data.email} />
+                        <label>Email</label>
+                    </div>
+
+                    <div className="form-control">
+                    <input
                   className="form-control"
                   type="text"
                   name="password"
                   onChange={onChange}
                   value={data.password}
                 />
-              </div>
-            </div>
-
-            <div className="col-md-6">
-              {" "}
-              <div className="form-group">
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  onChange={onChange}
-                  value={data.email}
-                />
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div
+                        <label>Parola</label>
+                    </div>
+                    <div
                 className="form-group p-3"
                 style={{ border: "1px solid red", borderRadius: "10px" }}
               >
@@ -133,17 +114,19 @@ const Kullanici = () => {
                   }
                 />
               </div>
-            </div>
-          </div>
-          <button
-            type="submit"
-            className="btn btn-danger d-block mx-auto col-3"
-            style={{ background: "red" }}
-          >
-            Düzenle
-          </button>
-        </form>
-      </div>
+                   
+                    <button type="submit">Kayıt Ol</button>
+                    <Link to="/giris-yap"> Giris Yap</Link>
+                    <div className="form-help">
+                        <div className="remember-me ">
+                        </div>
+                        <Link to="">Sana nasıl yardımcı olabilirim ?</Link>
+                    </div>
+                </form>
+
+            </div >
+        </div >
+     
     </>
   );
 };

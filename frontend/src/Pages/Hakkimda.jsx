@@ -7,6 +7,7 @@ const Hakkimda = () => {
                 <div className="showcase-top">
                     <img src="/images/logo.webp" alt="Netflix Logo" />
                     <Link to="/giris-yap" className="btn btn-rounded pt-2" style={{ backgroundColor: "red" }}>Giriş Yap</Link>
+
                 </div>
                 <div className="showcase-content">
                     <h1>Sınırsız film, dizi ve çok daha fazlası</h1>

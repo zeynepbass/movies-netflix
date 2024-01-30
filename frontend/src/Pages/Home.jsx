@@ -159,11 +159,16 @@ const Home = (props) => {
                       height: "40px",
                       boxShadow: "none"
                     }}>
-                      Hoşgeldin {user.result.firstName}
+                        <img src={user.result.selectedFile}style={{width:"40px", height:"40px",borderRadius:"100px"}} alt="User Avatar" /> &nbsp;
                     </Link>
                     <ul className="dropdown-menu">
-                      <li onClick={Exıt} className="dropdown-item">Çıkış Yap</li>
-                    </ul>
+                      <li onClick={Exıt} className="dropdown-item">
+                        Çıkış Yap</li>
+                      <li className="dropdown-item">
+
+                      <Link to={`/profil/${user.result.email}`} style={{ color: "black" }}><b>Profil Güncelle</b></Link>
+</li>
+ </ul>
                   </li>
                 </div>
               </div>

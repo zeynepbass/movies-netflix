@@ -18,6 +18,7 @@ import Favoriler from "./Pages/Favoriler.jsx";
 import Profil from "./Pages/Hesap.jsx";
 import Error from "./Pages/Error.jsx";
 import KullaniciDuzenle from "./Pages/Kullanici.jsx";
+import ProfilDuzenle from "./Pages/ProfılGuncelle.jsx";
 import Admin from "./Pages/Admin.jsx";
 import "./Pages/style.css";
 import "./Pages/responsive.css";
@@ -27,6 +28,8 @@ function App() {
       <Routes>
         <Route path="/kayit-ol" element={<Register />}></Route>
         <Route path="/giris-yap" element={<Login />}></Route>
+        <Route path="/profil/:email" element={<ProfilDuzenle />}></Route>
+       
         <Route path="/" element={<Hakkimda />}></Route>
         <Route path="/veriler" element={<Panel content={<Veri />} />}></Route>
 
